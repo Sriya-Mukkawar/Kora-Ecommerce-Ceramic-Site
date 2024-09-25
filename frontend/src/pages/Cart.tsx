@@ -53,11 +53,8 @@ const CartItem = ({ product, handleQuantityChange, handleRemove }) => {
 };
 
 const CartPage = () => {
-    const {cartItems, setCartItems} = useContext(AppContext);
-    console.log(cartItems);
-
+    const { cartItems, setCartItems } = useContext(AppContext);
     const [couponCode, setCouponCode] = useState("");
-
     const navigate = useNavigate(); // Hook for navigation
 
     const handleQuantityChange = (id, newQuantity) => {
@@ -82,6 +79,12 @@ const CartPage = () => {
     const handleApplyCoupon = () => {
         // Here you can add logic to apply the coupon
         toast.success("Coupon applied successfully!"); // Show success toast
+    };
+
+    // New function to handle the Update Cart action
+    const handleUpdateCart = () => {
+        // Logic for updating the cart can be added here
+        toast.success("Cart updated successfully!"); // Show success toast
     };
 
     return (
@@ -135,7 +138,12 @@ const CartPage = () => {
                                 Apply Coupon
                             </button>
                         </div>
-                        <button className="bg-gray-800 text-white px-4 py-2">Update Cart</button>
+                        <button 
+                            onClick={handleUpdateCart} // Call the new function here
+                            className="bg-gray-800 text-white px-4 py-2"
+                        >
+                            Update Cart
+                        </button>
                     </div>
 
                     {/* Cart totals */}

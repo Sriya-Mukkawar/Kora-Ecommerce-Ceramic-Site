@@ -125,24 +125,24 @@ const ProductSummary = ({ cartItems }) => {
           return (
             <div className="flex justify-between" key={item.id}>
               <span>{item.name} (x{item.quantity})</span>
-              <span>${(cost * item.quantity).toFixed(2)}</span>
+              <span>₹{(cost * item.quantity).toFixed(2)}</span>
             </div>
           );
         })}
         <div className="border-t pt-2 font-semibold">
           <div className="flex justify-between">
             <span>Subtotal</span>
-            <span>${calculateSubtotal().toFixed(2)}</span>
+            <span>₹{calculateSubtotal().toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span>Shipping</span>
-            <span>${shippingCost.toFixed(2)}</span>
+            <span>₹{shippingCost.toFixed(2)}</span>
           </div>
         </div>
         <div className="border-t pt-2 font-semibold">
           <div className="flex justify-between text-xl mt-2">
             <span>Total</span>
-            <span>${totalCost.toFixed(2)}</span>
+            <span>₹{totalCost.toFixed(2)}</span>
           </div>
         </div>
       </div>

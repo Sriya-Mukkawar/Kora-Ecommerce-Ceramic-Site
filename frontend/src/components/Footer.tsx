@@ -1,5 +1,6 @@
-import { Badge, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo_Kora2.png'; 
 
 const FooterSection = ({
   title,
@@ -29,13 +30,14 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="w-full md:w-3/10 pr-4 mb-8 md:mb-0 col-span-1">
             <div className="flex items-center mb-4">
-              <Badge size={24} />
+              <img src={logo} alt="Kora Logo" className="h-8 w-8" /> 
               <span className="ml-2 text-xl font-bold">Kora</span>
             </div>
-            <button className="bg-transparent border px-4 py-2 flex items-center hover:bg-blue-50 hover:text-gray-900 transition duration-300">
+            {/* Wrap the button with Link to enable navigation */}
+            <Link to="/" className="bg-transparent border px-4 py-2 flex items-center hover:bg-blue-50 hover:text-gray-900 transition duration-300">
               Get Started
               <ArrowRight size={16} className="ml-2" />
-            </button>
+            </Link>
           </div>
           <div className="w-full md:w-7/10 md:pl-8 md:border-l border-gray-300 col-span-1 md:col-span-2 lg:col-span-3">
             <div className="flex flex-wrap">
@@ -80,7 +82,7 @@ function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-300 text-center text-sm text-gray-400">
           <p>
-            Copyright © 2023 Kora | All Rights Reserved |{' '}
+            Copyright © 2024 Kora | All Rights Reserved |{' '}
             <Link to="/" className="hover:text-gray-200">
               Terms and Conditions
             </Link>{' '}

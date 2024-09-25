@@ -157,41 +157,43 @@ const ShopPage = () => {
         <h3 className="text-lg font-semibold mb-4">Showing {filteredProducts.length} items</h3>
         {/* Category Filter */}
         <div className="mb-6">
-          <h4 className="text-md font-semibold mb-2">Category</h4>
-          {['dinnerware', 'ceramic', 'furniture', 'decor_art', 'gift_sets'].map(category => (
-            <div key={category}>
-              <label>
-                <input
-                  type="checkbox"
-                  value={category}
-                  onChange={() => handleFilterChange('category', category)}
-                />
-                <span className="ml-2 capitalize">{category.replace('_', ' ')}</span>
-              </label>
-              <br />
-            </div>
-          ))}
-          <hr className="border-t border-black mt-2 mb-4" />
-        </div>
+  <h4 className="text-md font-semibold mb-2">Category</h4>
+  {['dinnerware', 'ceramic', 'furniture', 'decor_art', 'gift_sets'].map(category => (
+    <div key={category}>
+      <label>
+        <input
+          type="checkbox"
+          value={category}
+          onChange={() => handleFilterChange('category', category)}
+        />
+        <span className="ml-2 capitalize">{category.replace('_', ' ')}</span>
+      </label>
+      <br />
+    </div>
+  ))}
+  <hr className="border-t border-black mt-2 mb-4" />
+</div>
 
-        {/* Price Range Filter */}
-        <div className="mb-6">
-          <h4 className="text-md font-semibold mb-2">Price Range</h4>
-          {['0-1500', '1500-3000', '3000-4000', '4000-5499', '5500+'].map(range => (
-            <div key={range}>
-              <label>
-                <input
-                  type="checkbox"
-                  value={range}
-                  onChange={() => handleFilterChange('price', range)}
-                />
-                <span className="ml-2">₹{range.replace('-', ' - ')}</span>
-              </label>
-              <br />
-            </div>
-          ))}
-          <hr className="border-t border-black mt-2 mb-4" />
-        </div>
+{/* Price Range Filter */}
+<div className="mb-6">
+  <h4 className="text-md font-semibold mb-2">Price Range</h4>
+  {['0-1500', '1500-3000', '3000-4000', '4000-5499', '5500+'].map(range => (
+    <div key={range}>
+      <label>
+        <input
+          type="checkbox"
+          value={range}
+          onChange={() => handleFilterChange('price', range)}
+        />
+        <span className="ml-2">₹{range.replace('-', ' - ')}</span>
+      </label>
+      <br />
+    </div>
+  ))}
+  <hr className="border-t border-black mt-2 mb-4" />
+</div>
+
+        
       </div>
 
       {/* Right Products Section */}
